@@ -1,139 +1,92 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Hemanth Web Services</title>
+<title>Hemanth Web Services – Home</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0;font-family:Poppins,sans-serif;}
+body{background:linear-gradient(135deg,#f5f8ff,#eef2ff);color:#0f172a}
 
-body{
-  background: linear-gradient(135deg,#f5f8ff,#eef2ff);
-  color:#0f172a;
+/* NAVBAR */
+.nav{
+  position:sticky;top:0;z-index:10;
+  background:white;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 20px;
+  box-shadow:0 5px 20px rgba(0,0,0,.08);
 }
+.nav a{text-decoration:none;color:#1e3a8a;font-weight:600;margin:0 10px}
 
 /* HERO */
-.hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:40px 20px;
-}
+.hero{min-height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px}
+.hero-box{max-width:750px}
+.hero h1{font-size:2.6rem;margin-bottom:10px}
+.hero p{color:#475569;margin-bottom:25px}
 
-.hero-box{
-  max-width:700px;
-}
-
-.hero h1{
-  font-size:2.6rem;
-  font-weight:700;
-  margin-bottom:10px;
-}
-
-.hero p{
-  font-size:1.1rem;
-  color:#475569;
-  margin-bottom:30px;
-}
-
-/* BUTTONS */
-.btns{
-  display:flex;
-  justify-content:center;
-  gap:15px;
-  flex-wrap:wrap;
-}
-
+/* BUTTON */
 .btn{
+  display:inline-block;
   padding:14px 26px;
   border-radius:14px;
   text-decoration:none;
   font-weight:600;
-  background: linear-gradient(135deg,#2563eb,#3b82f6);
+  background:linear-gradient(135deg,#2563eb,#3b82f6);
   color:white;
-  box-shadow:0 10px 25px rgba(37,99,235,0.35);
+  box-shadow:0 10px 25px rgba(37,99,235,.35);
   transition:.3s;
 }
-
-.btn.secondary{
-  background:white;
-  color:#2563eb;
-}
-
-.btn:hover{
-  transform:translateY(-3px);
-  box-shadow:0 15px 35px rgba(37,99,235,0.4);
-}
+.btn:hover{transform:translateY(-3px)}
 
 /* SECTIONS */
-.section{
-  padding:70px 20px;
-  max-width:1100px;
-  margin:auto;
-}
-
-.section h2{
-  text-align:center;
-  font-size:2rem;
-  margin-bottom:40px;
-  color:#1e3a8a;
-}
+.section{padding:70px 20px;max-width:1100px;margin:auto}
+.section h2{text-align:center;margin-bottom:40px;color:#1e3a8a}
 
 /* CARDS */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-}
-
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
 .card{
-  background:rgba(255,255,255,0.7);
-  backdrop-filter: blur(10px);
+  background:rgba(255,255,255,.7);
+  backdrop-filter:blur(10px);
   border-radius:20px;
   padding:25px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
   transition:.3s;
 }
-
-.card:hover{
-  transform:translateY(-6px);
-}
+.card:hover{transform:translateY(-6px)}
 
 /* FOOTER */
-.footer{
-  text-align:center;
-  padding:30px;
-  color:#475569;
-}
+.footer{text-align:center;padding:30px;color:#475569}
 
-/* SCROLL ANIMATION */
-.reveal{
-  opacity:0;
-  transform:translateY(40px);
-  transition:all .8s ease;
-}
-.reveal.active{
-  opacity:1;
-  transform:translateY(0);
-}
+/* ANIMATION */
+.reveal{opacity:0;transform:translateY(40px);transition:.8s}
+.reveal.active{opacity:1;transform:translateY(0)}
 </style>
 </head>
 <body>
+
+<!-- NAV -->
+<div class="nav">
+  <div><b>Hemanth Web Services</b></div>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="work.html">Work</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</div>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-box">
     <h1>Hemanth Web Services</h1>
-    <p>I build modern, fast and professional websites for local businesses</p>
-    <div class="btns">
-      <a class="btn" href="tel:6360187919">📞 Call Me</a>
-      <a class="btn secondary" href="https://wa.me/916360187919">💬 WhatsApp</a>
-    </div>
+    <p>Includes expressive animations. Tweak effects with a few clicks and capture your audience's attention when they land on your website.</p>
+    <a class="btn" href="contact.html">📞 Contact Me</a>
   </div>
 </section>
 
@@ -141,45 +94,32 @@ body{
 <section class="section reveal">
   <h2>About Me</h2>
   <div class="card">
-    I help shops, hotels, and small businesses get professional websites that bring more customers and build trust.
+    I build modern, fast, professional websites for local businesses like hotels, shops, clinics and showrooms.
   </div>
 </section>
 
-<!-- SERVICES -->
+<!-- QUICK SERVICES -->
 <section class="section reveal">
-  <h2>My Services</h2>
+  <h2>What I Do</h2>
   <div class="grid">
-    <div class="card">🌐 Business Website</div>
-    <div class="card">📱 Mobile Friendly Design</div>
-    <div class="card">⚡ Fast Loading Website</div>
-    <div class="card">📍 Google Map Integration</div>
-    <div class="card">💬 WhatsApp & Call Button</div>
-    <div class="card">🖼️ Photo Gallery & Menu</div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="section reveal">
-  <h2>Contact</h2>
-  <div class="grid">
-    <div class="card">📞 Call: 6360187919</div>
-    <div class="card">💬 WhatsApp Available</div>
+    <div class="card">🌐 Business Websites</div>
+    <div class="card">📱 Mobile Friendly</div>
+    <div class="card">⚡ Fast Loading</div>
+    <div class="card">📍 Map, Call, WhatsApp</div>
   </div>
 </section>
 
 <div class="footer">
-  © 2026 Hemanth Web Services. All rights reserved.
+  © 2026 Hemanth Web Services
 </div>
 
 <script>
 function reveal(){
-  var reveals=document.querySelectorAll(".reveal");
-  for(var i=0;i<reveals.length;i++){
+  var r=document.querySelectorAll(".reveal");
+  for(var i=0;i<r.length;i++){
     var h=window.innerHeight;
-    var t=reveals[i].getBoundingClientRect().top;
-    if(t < h - 100){
-      reveals[i].classList.add("active");
-    }
+    var t=r[i].getBoundingClientRect().top;
+    if(t<h-100){r[i].classList.add("active");}
   }
 }
 window.addEventListener("scroll",reveal);
