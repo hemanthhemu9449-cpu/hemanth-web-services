@@ -1,1 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hemanth Web Services – Contact</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:Poppins,sans-serif;}
+body{background:linear-gradient(135deg,#f5f8ff,#eef2ff);color:#0f172a}
+
+/* NAVBAR */
+.nav{
+  position:sticky;top:0;z-index:10;
+  background:white;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 20px;
+  box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+.nav a{text-decoration:none;color:#1e3a8a;font-weight:600;margin:0 10px}
+
+/* SECTIONS */
+.section{padding:70px 20px;max-width:900px;margin:auto;text-align:center}
+.section h1{margin-bottom:10px;color:#1e3a8a}
+.section p{color:#475569;margin-bottom:40px}
+
+/* CONTACT CARDS */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
+.card{
+  background:rgba(255,255,255,.7);
+  backdrop-filter:blur(10px);
+  border-radius:20px;
+  padding:30px 25px;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+  transition:.3s;
+}
+.card:hover{transform:translateY(-6px)}
+
+/* BUTTON */
+.btn{
+  display:inline-block;
+  margin-top:15px;
+  padding:12px 22px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:600;
+  background:linear-gradient(135deg,#2563eb,#3b82f6);
+  color:white;
+  box-shadow:0 8px 20px rgba(37,99,235,.35);
+  transition:.3s;
+}
+.btn:hover{transform:translateY(-3px)}
+
+/* FOOTER */
+.footer{text-align:center;padding:30px;color:#475569}
+
+/* ANIMATION */
+.reveal{opacity:0;transform:translateY(40px);transition:.8s}
+.reveal.active{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<div class="nav">
+  <div><b>Hemanth Web Services</b></div>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="work.html">Work</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="section">
+  <h1>Contact Me</h1>
+  <p>Call or WhatsApp me to get your business website</p>
+
+  <div class="grid reveal">
+
+    <!-- CALL -->
+    <div class="card">
+      <h2>📞 Call Me</h2>
+      <p>Talk directly about your website requirement</p>
+      <a class="btn" href="tel:6360187919">Call Now</a>
+      <p style="margin-top:10px;font-weight:600">6360187919</p>
+    </div>
+
+    <!-- WHATSAPP -->
+    <div class="card">
+      <h2>💬 WhatsApp</h2>
+      <p>Send message and get quick reply</p>
+      <a class="btn" href="https://wa.me/916360187919">Message Now</a>
+      <p style="margin-top:10px;font-weight:600">6360187919</p>
+    </div>
+
+  </div>
+</section>
+
+<div class="footer">
+  © 2026 Hemanth Web Services
+</div>
+
+<script>
+function reveal(){
+  var r=document.querySelectorAll(".reveal");
+  for(var i=0;i<r.length;i++){
+    var h=window.innerHeight;
+    var t=r[i].getBoundingClientRect().top;
+    if(t<h-100){r[i].classList.add("active");}
+  }
+}
+window.addEventListener("scroll",reveal);
+reveal();
+</script>
+
+</body>
+</html>
