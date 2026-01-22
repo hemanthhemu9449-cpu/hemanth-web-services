@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Hemanth Web Services – Modern Websites for Businesses</title>
+<title>Hemanth Web Services – Grow Your Business Online</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -10,7 +10,7 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0;font-family:Inter,sans-serif;}
 body{
-  background: radial-gradient(circle at 10% 10%, #dbeafe, #f8fafc 40%, #eef2ff 70%);
+  background:#f8fafc;
   color:#0f172a;
   overflow-x:hidden;
 }
@@ -18,8 +18,8 @@ body{
 /* NAVBAR */
 .nav{
   position:sticky; top:0; z-index:100;
-  background:rgba(255,255,255,0.7);
-  backdrop-filter: blur(10px);
+  background:rgba(255,255,255,0.8);
+  backdrop-filter: blur(12px);
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -39,31 +39,35 @@ body{
   display:flex;
   align-items:center;
   justify-content:center;
-  text-align:center;
   padding:40px 20px;
   position:relative;
 }
 .hero-bg{
   position:absolute;
-  inset:0;
-  background: linear-gradient(120deg, #2563eb, #7c3aed, #0ea5e9);
-  filter: blur(120px);
-  opacity:0.25;
+  inset:-20%;
+  background: radial-gradient(circle at 20% 20%, #60a5fa, transparent 40%),
+              radial-gradient(circle at 80% 30%, #a78bfa, transparent 40%),
+              radial-gradient(circle at 50% 80%, #38bdf8, transparent 40%);
+  filter: blur(80px);
+  opacity:0.6;
   z-index:-1;
 }
 .hero-box{
-  max-width:900px;
+  max-width:1100px;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:40px;
+  text-align:center;
 }
 .hero h1{
   font-size:3rem;
   font-weight:800;
   line-height:1.1;
-  margin-bottom:20px;
 }
 .hero p{
   font-size:1.15rem;
   color:#334155;
-  margin-bottom:35px;
+  margin-top:15px;
 }
 
 /* BUTTONS */
@@ -72,6 +76,7 @@ body{
   justify-content:center;
   gap:16px;
   flex-wrap:wrap;
+  margin-top:25px;
 }
 .btn{
   padding:14px 28px;
@@ -94,56 +99,66 @@ body{
 
 /* SECTIONS */
 .section{
-  padding:90px 20px;
+  padding:100px 20px;
   max-width:1200px;
   margin:auto;
 }
 .section h2{
   text-align:center;
-  font-size:2.2rem;
+  font-size:2.3rem;
   margin-bottom:15px;
   color:#1e3a8a;
 }
 .section .sub{
   text-align:center;
   color:#475569;
-  margin-bottom:50px;
+  margin-bottom:60px;
+  font-size:1.05rem;
 }
 
 /* CARDS */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:25px;
+  gap:30px;
 }
 .card{
-  background:rgba(255,255,255,0.75);
-  backdrop-filter: blur(12px);
-  border-radius:24px;
-  padding:30px;
+  background:rgba(255,255,255,0.7);
+  backdrop-filter: blur(14px);
+  border-radius:26px;
+  padding:32px;
   box-shadow:0 15px 40px rgba(0,0,0,0.08);
-  transition:.35s;
+  transition:.4s cubic-bezier(.2,.7,.2,1);
 }
 .card:hover{
-  transform:translateY(-10px) scale(1.02);
+  transform:translateY(-12px) scale(1.03);
 }
 
 /* STATS */
 .stats{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:25px;
+  gap:30px;
   text-align:center;
 }
 .stat{
-  background:rgba(255,255,255,0.7);
-  border-radius:20px;
-  padding:30px;
+  background:linear-gradient(135deg,#ffffff,#f1f5f9);
+  border-radius:24px;
+  padding:35px;
   box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 .stat b{
-  font-size:2.2rem;
+  font-size:2.4rem;
   color:#2563eb;
+}
+
+/* CTA */
+.cta{
+  text-align:center;
+  background:linear-gradient(135deg,#2563eb,#7c3aed);
+  color:white;
+  border-radius:30px;
+  padding:80px 30px;
 }
 
 /* FOOTER */
@@ -156,12 +171,28 @@ body{
 /* ANIMATIONS */
 .reveal{
   opacity:0;
-  transform:translateY(60px);
+  transform:translateY(80px);
   transition:1s cubic-bezier(.2,.7,.2,1);
 }
 .reveal.active{
   opacity:1;
   transform:translateY(0);
+}
+.fade{
+  opacity:0;
+  transition:1.2s ease;
+}
+.fade.active{
+  opacity:1;
+}
+.zoom{
+  opacity:0;
+  transform:scale(0.9);
+  transition:1s cubic-bezier(.2,.7,.2,1);
+}
+.zoom.active{
+  opacity:1;
+  transform:scale(1);
 }
 </style>
 </head>
@@ -182,12 +213,14 @@ body{
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
-  <div class="hero-box">
-    <h1>Modern Websites That Make Your Business Look Big & Professional</h1>
-    <p>Includes expressive animations. Tweak effects with a few clicks and capture your audience's attention when they land on your website.</p>
-    <div class="btns">
-      <a class="btn" href="contact.html">📞 Get Your Website</a>
-      <a class="btn secondary" href="work.html">👀 See My Work</a>
+  <div class="hero-box fade">
+    <div>
+      <h1>Make Your Business Look Big, Professional & Trustworthy Online</h1>
+      <p>Includes expressive animations. Tweak effects with a few clicks and capture your audience's attention when they land on your website.</p>
+      <div class="btns">
+        <a class="btn" href="contact.html">📞 Get Your Website</a>
+        <a class="btn secondary" href="work.html">👀 See My Work</a>
+      </div>
     </div>
   </div>
 </section>
@@ -202,10 +235,10 @@ body{
   </div>
 </section>
 
-<!-- SERVICES -->
-<section class="section reveal">
-  <h2>What I Do</h2>
-  <p class="sub">Everything your business needs to look professional online</p>
+<!-- FEATURES -->
+<section class="section zoom">
+  <h2>Everything Your Business Needs</h2>
+  <p class="sub">We don’t just make websites. We build your online presence.</p>
   <div class="grid">
     <div class="card">🌐 Business & Company Websites</div>
     <div class="card">🏨 Hotel, Shop, Clinic Websites</div>
@@ -216,15 +249,24 @@ body{
   </div>
 </section>
 
-<!-- WHY ME -->
+<!-- WHY -->
 <section class="section reveal">
-  <h2>Why Choose Me?</h2>
+  <h2>Why Choose Hemanth Web Services?</h2>
   <p class="sub">Simple process. Real results.</p>
   <div class="grid">
-    <div class="card">✅ Simple language, no technical headache</div>
-    <div class="card">✅ Affordable pricing for small businesses</div>
+    <div class="card">✅ No technical headache</div>
+    <div class="card">✅ Affordable for small businesses</div>
     <div class="card">✅ Fast delivery</div>
-    <div class="card">✅ Your customers can call you in one tap</div>
+    <div class="card">✅ More calls from customers</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section zoom">
+  <div class="cta">
+    <h2>Ready to Grow Your Business?</h2>
+    <p style="margin:15px 0 30px;opacity:.9">Call or WhatsApp now and get your professional website.</p>
+    <a class="btn" href="contact.html">📞 Contact Me Now</a>
   </div>
 </section>
 
@@ -233,8 +275,8 @@ body{
 </div>
 
 <script>
-function reveal(){
-  var els=document.querySelectorAll(".reveal");
+function animate(){
+  var els=document.querySelectorAll(".reveal,.fade,.zoom");
   for(var i=0;i<els.length;i++){
     var h=window.innerHeight;
     var t=els[i].getBoundingClientRect().top;
@@ -243,9 +285,9 @@ function reveal(){
     }
   }
 }
-window.addEventListener("scroll",reveal);
-reveal();
+window.addEventListener("scroll",animate);
+animate();
 </script>
 
 </body>
-</html>
+      </html>
